@@ -18,7 +18,6 @@ const Navbar = () => {
         mixBlendMode: "difference"
     };
 
-
     return (
         <>
             {/* Navbar for desktop */}
@@ -27,9 +26,14 @@ const Navbar = () => {
                     <li><Link to="/" style={navLinksStyle} className="hoverable">HOME</Link></li>
                     <li><Link to="/works" style={navLinksStyle} className="hoverable">WORKS</Link></li>
                     <li><Link to="/about" style={navLinksStyle} className="hoverable">ABOUT</Link></li>
+                    <li>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=ilh.agas4111@gmail.com" 
+                            style={navLinksStyle}
+                            className="hoverable"
+                        target="_blank">CONTACT</a>
+                    </li>
                 </ul>
             </nav>
-
 
             {/* Mobile hamburger */}
             <button

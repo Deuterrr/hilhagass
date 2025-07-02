@@ -7,7 +7,6 @@ import Navbar from "../components/Navbar.jsx";
 import AnimatedWords from "../components/AnimatedWords.jsx";
 import CountingStats from "../components/home/CountingStats.jsx";
 
-
 import headerPic from "../assets/images/home/pic-1.jpg";
 import hilhagas from "../assets/images/works/hilhagas-1.png";
 import grahakost from "../assets/images/works/grahakost-1.png";
@@ -74,7 +73,7 @@ export default function Home() {
                         <div className="flex flex-1 flex-col py-4 px-4"
                             style={{borderRight: "1px solid var(--light-grey)"}}>
                             <div className="flex w-[48vh] h-[48vh] box-border bg-orange-300"
-                                style={{border: "1px solid var(--light-grey)", cursor: "pointer", overflow: "hidden"}}>
+                            style={{border: "1px solid var(--light-grey)"}}>
                                 <img
                                     src={hilhagas}
                                     data-full={hilhagas}
