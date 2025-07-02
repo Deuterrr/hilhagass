@@ -10,7 +10,7 @@ import Works from "./pages/Works.jsx";
 export default function App() {
   return (
     <div className="" style={{ backgroundColor: "var(--white)" }}>
-      <Router basename="/hilhagas">
+      <Router basename="/hilhagass">
         <ScrollToTop />
         <CustomCursor />
           <PageLoaderWrapper>
