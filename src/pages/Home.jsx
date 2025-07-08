@@ -112,7 +112,7 @@ export default function Home() {
                     lg:px-10 px-4
                     lg:overflow-x-hidden lg:flex-grow
                     "
-                    style={{ border: '2px solid var(--light-grey)' }}
+                    style={{ border: '1px solid var(--light-grey)' }}
                 >
                     {projects.map((project, index) => (
                     <Link
@@ -125,7 +125,7 @@ export default function Home() {
                         <div
                         class="flex flex-1 flex-col py-3 px-3 h-full"
                         style={{
-                            borderRight: index < projects.length - 1 ? '2px solid var(--light-grey)' : 'none'
+                            borderRight: index < projects.length - 1 ? '1px solid var(--light-grey)' : 'none'
                         }}
                         >
                             <div
@@ -134,7 +134,7 @@ export default function Home() {
                                 2xl:min-h-[720px] xl:min-h-[440px] min-h-[300px]
                                 min-w-[280px]
                                 "
-                                style={{ border: '2px solid var(--light-grey)' }}
+                                style={{ border: '1px solid var(--light-grey)' }}
                             >
                                 <img
                                 src={project.image}

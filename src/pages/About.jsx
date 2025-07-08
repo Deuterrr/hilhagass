@@ -381,7 +381,7 @@ export default function About() {
                                             {emojiMap[skill] ?? "❓"}
                                         </div>
                                         <div
-                                            className={`absolute text-2xl scale-100 left-0 top-0 bg-blue-300 px-2`}
+                                            className={`absolute text-2xl scale-100 left-0 bottom-0 mb-[-1rem] ml-[-1rem] bg-blue-300 px-2`}
                                             style={{
                                                 transform: `rotate(${(rotateMap[skill] ?? 0) / 2}deg)`,
                                             }}
@@ -417,7 +417,7 @@ export default function About() {
                                     {emojiMap[skillsData[activeSkillIdx]] ?? "❓"}
                                 </div>
                                 <div
-                                    className={`absolute text-2xl scale-100 left-0 top-0 bg-blue-300`}
+                                    className={`absolute text-2xl scale-100 left-0 top-0 px-1 mt-[-1rem] ml-[-1rem] bg-blue-300`}
                                     style={{
                                         transform: `rotate(${(rotateMap[skillsData[activeSkillIdx]] ?? 0) / 2}deg)`,
                                     }}
