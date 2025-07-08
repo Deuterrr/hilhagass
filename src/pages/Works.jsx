@@ -22,7 +22,8 @@ export default function Works() {
             overview: <>
                 <AnimatedWords text="I developed this" />
                 <AnimatedWords text="portfolio website" orange/>
-                <AnimatedWords text="both to fulfill a college project requirement and as a personal playground for exploring new technologies and future opportunities. Built with React for its component-based architecture and Tailwind CSS for its intuitive, utility-first approach, the site showcases my work in a responsive, well-structured design." />
+                <AnimatedWords text="both to fulfill a college project requirement and as a personal playground for exploring new technologies and future opportunities." />
+                <AnimatedWords text="Built with React for its component-based architecture and Tailwind CSS for its intuitive, utility-first approach, the site showcases my work in a responsive, well-structured design." />
             </>,
             tech: <><AnimatedWords text="・ReactJS・Tailwind・Figma" /></>,
             role: <><AnimatedWords text="・Full-Stack Developer & Engineer・UI-UX Designer" /></>,
@@ -38,7 +39,8 @@ export default function Works() {
             <>
                 <AnimatedWords text="I had the opportunity to develop and maintain" />
                 <AnimatedWords text="a full-stack Laravel-based admin service for renting platform" orange />
-                <AnimatedWords text="tailored for boarding house listings. I designed and implemented the server-side architecture, including the admin dashboard and database services, and created a responsive, clean user interface. Throughout the project, I focused on meeting private client requirements with an emphasis on reliability, performance, and security." />
+                <AnimatedWords text="tailored for boarding house listings. I designed and implemented the server-side architecture, including the admin dashboard and database services, and created a responsive, clean user interface." />
+                <AnimatedWords text="Throughout the project, I focused on meeting private client requirements with an emphasis on reliability, performance, and security." />
             </>
             ),
             tech: <><AnimatedWords text="・Laravel・Vite・Supabase・Figma" /></>,
@@ -49,13 +51,14 @@ export default function Works() {
             id: "vehiscan",
             title: <><AnimatedWords text="VehiScan" /></>,
             category: <><AnimatedWords text="Computer Vision" orange /></>,
-            purpose: <><AnimatedWords text="Project - College, Enthusiast" /></>,
+            purpose: <><AnimatedWords text="Contract, Project - Lapis AI, College" /></>,
             status: <><AnimatedWords text="Finish - July 2025" /></>,
             overview: (
             <>
                 <AnimatedWords text="As part of a development team, I contributed to designing and implementing" />
                 <AnimatedWords text="a real-time vehicle and license plate detection system." orange />
-                <AnimatedWords text="I also helped develop a Flet-based application interface that processes live CCTV footage and classifies license plates as even or odd. The system achieved strong performance metrics, with 92% precision and 91% recall in validation tests." />
+                <AnimatedWords text="I also helped develop a Flet-based application interface that processes live CCTV footage and classifies license plates as even or odd." />
+                <AnimatedWords text="The system achieved strong performance metrics, with 92% precision and 91% recall in validation tests." />
             </>
             ),
             tech: <><AnimatedWords text="・YOLOv8 Nano・EasyOCR・Flet・Roboflow" /></>,
@@ -72,7 +75,9 @@ export default function Works() {
             <>
                 <AnimatedWords text="As team leader, I spearheaded the development of a" />
                 <AnimatedWords text="brain tumor segmentation system" orange />
-                <AnimatedWords text="using TensorFlow and the U-Net architecture. This project objectives is to investigate how different architectural choices affect segmentation performance on medical imaging data. It combined research-driven experimentation with practical model engineering to achieve accurate, reliable detection of tumor regions, while guiding the team to maintain a rigorous, results-focused approach." />
+                <AnimatedWords text="using TensorFlow and the U-Net architecture." />
+                <AnimatedWords text="This project objectives is to investigate how different architectural choices affect segmentation performance on medical imaging data." />
+                <AnimatedWords text="It combined research-driven experimentation with practical model engineering to achieve accurate, reliable detection of tumor regions, while guiding the team to maintain a rigorous, results-focused approach." />
             </>
             ),
             tech: <><AnimatedWords text="・Tensorflow・U-Net・Jupyter Notebook" /></>,
@@ -87,9 +92,11 @@ export default function Works() {
             status: <><AnimatedWords text="On Going" /></>,
             overview: (
             <>
-                <AnimatedWords text="Cinema alternation is a" />
+                <AnimatedWords text="Cinema Time is a" />
                 <AnimatedWords text="cinema mobile application" orange />
-                <AnimatedWords text="that I developed as a solo project, expanding on my work from an Android app development course. Driven by curiosity about how cinema companies structure seat reservations to enable fast data fetching and smooth rendering, I designed and built the app end-to-end as a software engineer and developer." />
+                <AnimatedWords text="that I developed as a solo project, expanding on my work from an Android app development course." />
+                <AnimatedWords text="Driven by curiosity about how cinema companies structure seat reservations to enable fast data fetching and smooth rendering," />
+                <AnimatedWords text="I designed and built the app end-to-end as a software engineer and developer." />
             </>
             ),
             tech: <><AnimatedWords text="・Flutter・Supabase・Figma" /></>,
@@ -104,7 +111,8 @@ export default function Works() {
             status: <><AnimatedWords text="On Going" /></>,
             overview: (
             <>
-                <AnimatedWords text="Together with friends, I explored database structures capable of handling large-scale data and tested algorithm efficiency for fast, cost-effective operations. As the team leader, I lead in developing" />
+                <AnimatedWords text="Together with friends, I explored database structures capable of handling large-scale data and tested algorithm efficiency for fast, cost-effective operations." />
+                <AnimatedWords text="As the team leader, I lead in developing" />
                 <AnimatedWords text="a platform to help fellow students easily borrow books from the university library." orange />
             </>
             ),
@@ -117,21 +125,31 @@ export default function Works() {
         const params = new URLSearchParams(window.location.search);
         const project = params.get("project");
         if (project) {
+            setExpandedProjectId(project);
             const el = document.getElementById(project);
             if (el) el.scrollIntoView({ behavior: "smooth" });
         }
     }, []);
 
+    const [expandedProjectId, setExpandedProjectId] = useState(null);
+    const toggleExpand = (id) => {
+        setExpandedProjectId(prev => prev === id ? null : id);
+    };
 
     return (
-        <div className="">
+        <div className="flex flex-col w-full">
             {/* Navbar */}
             <Navbar />
             {/* Overview */}
-            <div className="flex flex-col box-border px-20 py-14 h-[72vh] w-[60%] gap-10 justify-end">
+            <div
+            className="flex flex-col box-border justify-end
+                md:px-20 px-10
+                md:py-14 py-6
+                md:h-[72vh] h-[60vh] 
+            ">
                 <div className="">
-                    <h1 className="leading-[110px] tracking-[-1px]"
-                    style={{fontFamily: "var(--font-header)", fontSize: "var(--font-header1-size)"}}>
+                    <h1 className="leading-[var(--leading-header1-size)] tracking-[-1px]"
+                    style={{fontFamily: "var(--font-title)", fontSize: "var(--font-header1-size)"}}>
                         <AnimatedWords
                             text="PROJECTS."
                         />
@@ -142,106 +160,157 @@ export default function Works() {
             {/* Projects Builder */}
             <div className=""
             style={{borderBottom: "1px solid var(--light-grey)"}}>
+                {projects.map((project, index) => {
+                    const isExpanded = expandedProjectId === project.id;
+                    return (
+                        <div id={project.id} key={project.id}
+                        className={`flex w-full
+                            md:flex-row flex-col
+                            ${isExpanded ? "" : "hoverable"}
+                        `}
+                        onClick={() => toggleExpand(project.id)}
+                        style={{border: "1px solid var(--light-grey)", borderBottom: "none"}}>
+                            {/* Left Section */}
+                            <div 
+                            className="flex flex-col items-end gap-2 justify-between border-solid
+                                md:pb-15 pb-0
+                                md:w-[38%]
+                                md:border-r border-r-0
+                            "
+                            style={{borderColor: "var(--light-grey)"}}>
+                                <div className="flex flex-col w-full items-end gap-2">
+                                    <div 
+                                    className="flex flex-row py-1 w-full justify-end
+                                        md:px-10 sm:px-6 px-4
+                                    "
+                                        style={{borderBottom: "1px solid var(--light-grey)"}}>
+                                        <p style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)", color: "var(--light-grey)"}}>
+                                            <AnimatedWords
+                                                text="PROJECT"
+                                            />
+                                            #{index + 1}
+                                        </p>
+                                    </div>
+                                    <div 
+                                    className="flex flex-col gap-4 w-full px-10 py-9
+                                        md:items-end
+                                        sm:py-10
+                                    ">
+                                        <h2 
+                                        className="
+                                            leading-[var(--leading-header2-size)] tracking-[-1px] hyphens-auto
+                                            md:text-end
+                                            md:mr-[-14px] sm:mr-[-10px] mr-[-8px]
+                                        "
+                                        style={{fontFamily: "var(--font-text)", fontSize: "var(--font-header2-size)"}}>
+                                            {project.title}
+                                        </h2>
+                                        <div
+                                        className="leading-[var(--leading-small-text-size)] tracking-[-1px] 
+                                            md:text-end
+                                        " style={{ fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)" }}>
+                                            {project.category}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={`flex px-10 w-full h-[48vh] box-border
+                                transition-all duration-500 ease-in-out overflow-hidden
+                                ${isExpanded ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}
+                                `}>
+                                    <img
+                                        src={project.imageurl}
+                                        data-full={project.imageurl}
+                                        className="transition w-full h-full object-cover"
+                                        style={{border: "1px solid var(--light-grey)", backgroundColor: "var(--light-grey)"}}
+                                        onLoad={(e) => {
+                                            const img = new Image();
+                                            img.src = e.target.dataset.full;
+                                            img.onload = () => {
+                                                e.target.src = img.src;
+                                                e.target.classList.remove("blur-sm");
+                                            };
+                                        }}
+                                        // alt="Hilhagas"
+                                    />
+                                </div>
+                            </div>
 
-                {projects.map((project, index) => (
-                    <div id={project.id} key={project.id} className="flex w-full"
-                    style={{border: "1px solid var(--light-grey)", borderBottom: "none"}}>
-                        {/* Left Section */}
-                        <div className="flex flex-col w-[38%] pb-15 items-end gap-2 justify-between"
-                        style={{borderRight: "1px solid var(--light-grey)"}}>
-                            <div className="flex flex-col w-full items-end gap-2">
-                                <div className="flex flex-row px-10 py-1 w-full justify-between"
+                            {/* Right Section */}
+                            <div className="flex flex-col items-end gap-2
+                            md:w-[62%]
+                            "
+                            style={{borderRight: "1px solid var(--light-grey)"}}>
+                                <div className="flex-row px-10 py-1 w-full justify-between
+                                md:flex hidden
+                                "
                                     style={{borderBottom: "1px solid var(--light-grey)"}}>
-                                    <p style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)", color: "var(--black)"}}>
-                                        <AnimatedWords
-                                            text="PROJECT"
-                                        />
-                                    </p>
-                                    <p style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)", color: "var(--black)"}}>
-                                        #{index + 1}
-                                    </p>
+                                    <p style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)", color: "var(--light-grey)"}}>DESCRIPTION</p>
                                 </div>
-                                <div className="flex flex-col px-10 py-15 items-end gap-4">
-                                    <h2 className="leading-[var(--leading-header2-size)] tracking-[-1px] text-end"
-                                    style={{fontFamily: "var(--font-text)", fontSize: "var(--font-header2-size)"}}>
-                                        {project.title}
-                                    </h2>
-                                    <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{ fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)" }}>
-                                        {project.category}
+                                <div className="flex flex-col px-10
+                                md:py-18 sm:py-12 py-8
+                                ">
+                                    {/* Purpose & Status */}
+                                    <div className="flex flex-col mb-12">
+                                        <div className="flex flex-row w-full
+                                        md:gap-12 sm:gap-10 gap-8
+                                        ">
+                                            <div className="flex flex-1 flex-col gap-4">
+                                                <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>PURPOSE</h2>
+                                                <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
+                                                    {project.purpose}
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-1 flex-col gap-4">
+                                                <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>STATUS</h2>
+                                                <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
+                                                    {project.status}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="flex px-10 w-full h-[48vh] box-border">
-                                <img
-                                    src={project.imageurl}
-                                    data-full={project.imageurl}
-                                    className="transition w-full h-full object-cover"
-                                    style={{border: "1px solid var(--light-grey)", backgroundColor: "var(--light-grey)"}}
-                                    onLoad={(e) => {
-                                        const img = new Image();
-                                        img.src = e.target.dataset.full;
-                                        img.onload = () => {
-                                            e.target.src = img.src;
-                                            e.target.classList.remove("blur-sm");
-                                        };
-                                    }}
-                                    // alt="Hilhagas"
-                                />
-                            </div>
-                        </div>
 
-                        {/* Right Section */}
-                        <div className="flex flex-col w-[62%] items-end gap-2"
-                        style={{borderRight: "1px solid var(--light-grey)"}}>
-                        <div className="flex flex-row px-10 py-1 w-full justify-between"
-                            style={{borderBottom: "1px solid var(--light-grey)"}}>
-                            <p style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)", color: "var(--black)"}}>DESCRIPTION</p>
-                        </div>
+                                    {/* get Hides */}
+                                    <div className={`flex flex-col
+                                        transition-all duration-500 ease-in-out overflow-hidden
+                                        ${isExpanded ? "max-h-[1000px] opacity-100 gap-12 mb-12" : "max-h-0 gap-0 mb-0 opacity-0"} 
+                                    `}>
+                                        {/* Overview */}
+                                        <div className="flex flex-col gap-4">
+                                            <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>OVERVIEW</h2>
+                                            <div className="leading-[var(--leading-small-text-size)] tracking-[-1px] w-full" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
+                                                {project.overview}
+                                            </div>
+                                        </div>
 
-                        <div className="flex flex-col gap-16 px-10 py-24">
-                            {/* Purpose & Status */}
-                            <div className="flex flex-row w-full">
-                                <div className="flex flex-1 flex-col gap-4">
-                                    <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>PURPOSE</h2>
-                                    <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
-                                        {project.purpose}
+                                        {/* Tech */}
+                                        <div className="flex flex-col gap-4">
+                                            <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>TECH & TOOLS</h2>
+                                            <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
+                                                {project.tech}
+                                            </div>
+                                        </div>
+
+                                        {/* Role */}
+                                        <div className="flex flex-col gap-4">
+                                            <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>ROLE & IMPACT</h2>
+                                            <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
+                                                {project.role}
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="flex flex-1 flex-col gap-4">
-                                    <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>STATUS</h2>
-                                    <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
-                                        {project.status}
-                                    </div>
-                                </div>
-                                </div>
 
-                                {/* Overview */}
-                                <div className="flex flex-col gap-4 max-w-[80%]">
-                                    <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>OVERVIEW</h2>
-                                    <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
-                                        {project.overview}
-                                    </div>
-                                </div>
-
-                                {/* Tech */}
-                                <div className="flex flex-col gap-4">
-                                    <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>TECH & TOOLS</h2>
-                                    <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
-                                        {project.tech}
-                                    </div>
-                                </div>
-
-                                {/* Role */}
-                                <div className="flex flex-col gap-4">
-                                    <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>ROLE & IMPACT</h2>
-                                    <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
-                                        {project.role}
+                                    {/* Role */}
+                                    <div className="flex flex-col gap-4">
+                                        <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>ROLE & IMPACT</h2>
+                                        <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
+                                            {project.role}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    )
+                })}
             </div>
             <Footer />
         </div>

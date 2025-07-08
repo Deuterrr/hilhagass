@@ -6,13 +6,13 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen(!isOpen);
     const navLinksStyle = {
-        fontFamily: "var(--font-header)",
+        fontFamily: "var(--font-title)",
         fontSize: "var(--font-small-text-size)",
         color: "var(--black)",
         mixBlendMode: "difference"
     };
     const navLinksSlideStyle = {
-        fontFamily: "var(--font-header)",
+        fontFamily: "var(--font-title)",
         fontSize: "var(--font-small-text-size)",
         color: "var(--white)",
         mixBlendMode: "difference"
@@ -21,7 +21,7 @@ const Navbar = () => {
     return (
         <>
             {/* Navbar for desktop */}
-            <nav className="fixed top-0 left-0 w-full hidden md:flex justify-end px-8 py-4">
+            <nav className="fixed top-0 left-0 w-full hidden md:flex justify-end px-8 py-4 z-300">
                 <ul className="flex space-x-6">
                     <li><Link to="/" style={navLinksStyle} className="hoverable">HOME</Link></li>
                     <li><Link to="/works" style={navLinksStyle} className="hoverable">WORKS</Link></li>
@@ -38,7 +38,7 @@ const Navbar = () => {
             {/* Mobile hamburger */}
             <button
                 onClick={toggleMenu}
-                className="md:hidden fixed top-4 right-4 z-50 text-black"
+                className="md:hidden fixed top-4 right-4 z-310 text-black"
                 aria-label="Toggle menu"
             >
                 {isOpen ? <FaTimes size={24} className='text-white' /> : <FaBars size={24} />}
@@ -46,7 +46,7 @@ const Navbar = () => {
 
             {/* Slide menu */}
             <div
-                className={`md:hidden fixed top-0 left-0 h-screen w-screen z-40 transform transition-transform duration-300 ease-in-out ${
+                className={`md:hidden fixed top-0 left-0 h-screen w-screen z-300 transform transition-transform duration-300 ease-in-out ${
                 isOpen ? 'translate-x-0' : 'translate-x-full'
             } bg-black`}
             >
@@ -54,7 +54,13 @@ const Navbar = () => {
                     <li><Link to="/" style={navLinksSlideStyle} className="hoverable">HOME</Link></li>
                     <li><Link to="/works" style={navLinksSlideStyle} className="hoverable">WORKS</Link></li>
                     <li><Link to="/about" style={navLinksSlideStyle} className="hoverable">ABOUT</Link></li>
-            </ul>
+                    <li>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=ilh.agas4111@gmail.com" 
+                            style={navLinksSlideStyle}
+                            className="hoverable"
+                        target="_blank">CONTACT</a>
+                    </li>
+                </ul>
             </div>
         </>
     );

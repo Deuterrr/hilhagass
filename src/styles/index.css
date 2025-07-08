@@ -10,6 +10,10 @@
   src: url('/src/assets/fonts/DMSans-SemiBold.ttf') format('truetype');
 }
 @font-face {
+  font-family: 'DMSansRegular';
+  src: url('/src/assets/fonts/DMSans-Regular.ttf') format('truetype');
+}
+@font-face {
   font-family: 'Sublima';
   src: url('/src/assets/fonts/Sublima-ExtraBold.otf') format('opentype');
 }
@@ -19,30 +23,86 @@
 }
 
 :root {
-  --font-header: 'MontserratExtraBold', monospace;
+  --font-title: 'MontserratExtraBold', monospace;
+  --font-header: 'DMSansSemiBold', monospace;
   --font-header-section: 'SpaceMonoRegular', monospace;
-  --font-text: 'DMSansSemiBold', monospace;
+  --font-text: 'DMSansRegular', monospace;
   --font-alt: 'SpaceMonoRegular', monospace;
 
   --font-header1-size: 140px;
-  --font-header2-size: 68px;
-  --font-text-size: 56px;
-  --font-medium-text-size: 38px;
-  --font-small-text-size: 24px;
+  --font-header2-size: 58px;
+  --font-text-size: 46px;
+                              --font-medium-text-size: 36px;
+                                                        --font-small-text-size: 28px;
   --font-alt-size: 16px;
 
   --leading-header1-size: 110px;
   --leading-header2-size: 64px;
   --leading-text-size: 72px;
-  --leading-medium-text-size: 52px;
-  --leading-small-text-size: 34px;
+                              --leading-medium-text-size: 52px;
+                                                        --leading-small-text-size: 46px;
 
   --black: #000;
   --white: #FFF;
   --light-grey: #C7C7C7;
+  --orange: #feb86b;
+}
+
+/* Tablet adjustments */
+@media (max-width: 1200px) {
+  :root {
+    --font-header1-size: 110px;
+    --font-header2-size: 42px;
+    --font-text-size: 52px;
+                                --font-medium-text-size: 34px;
+                                                          --font-small-text-size: 26px;
+    --font-alt-size: 14px;
+
+    --leading-header1-size: 86px;
+    --leading-header2-size: 44px;
+    --leading-text-size: 62px;
+                                --leading-medium-text-size: 48px;
+                                                          --leading-small-text-size: 40px;
+  }
+}
+
+/* Mobile large */
+@media (max-width: 912px) {
+  :root {
+    --font-header1-size: 92px;
+    --font-header2-size: 42px;
+    --font-text-size: 48px;
+                                --font-medium-text-size: 32px;
+                                                          --font-small-text-size: 23px;
+    --font-alt-size: 12px;
+
+    --leading-header1-size: 72px;
+    --leading-header2-size: 48px;
+    --leading-text-size: 58px;
+                                --leading-medium-text-size: 42px;
+                                                          --leading-small-text-size: 38px;
+  }
+}
+
+@media (max-width: 746px) {
+  :root {
+    --font-header1-size: clamp(38px, 12vw, 82px);
+    --font-header2-size: clamp(32px, 7.8vw, 42px);
+    --font-text-size: clamp(22px, 7vw, 48px);
+                                --font-medium-text-size: clamp(22px, 3.8vw, 32px);
+                                                          --font-small-text-size: 21px;
+    --font-alt-size: clamp(12px, 3vw, 12px);
+
+    --leading-header1-size: clamp(36px, 10vw, 64px);
+    --leading-header2-size: clamp(24px, 7.4vw, 48px);
+    --leading-text-size: clamp(30px, 8vw, 52px);
+                                --leading-medium-text-size: clamp(36px, 5.8vw, 42px);
+                                                          --leading-small-text-size: clamp(32px, 5vw, 36px);
+  }
 }
 
 html {
+  min-height: 100%;
   scroll-behavior: smooth;
 }
 

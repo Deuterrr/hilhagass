@@ -28,7 +28,7 @@ export default function CountingStats() {
     const animate = () => {
       let stillRunning = false;
       if (p < 5) {
-        p += 0.1;
+        p += 0.2;
         setProjects(Math.floor(p));
         stillRunning = true;
       }
@@ -43,7 +43,9 @@ export default function CountingStats() {
   };
 
   return (
-    <div ref={countRef} className="flex w-full gap-20 mt-16">
+    <div ref={countRef} className="flex w-full gap-20 
+    md:mt-16 mt-12
+    ">
       <div className="flex flex-col flex-1">
         <h2 className="mb-2"
           style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>

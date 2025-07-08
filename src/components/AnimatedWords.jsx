@@ -23,19 +23,19 @@ export default function AnimatedWords({ text, orange = false }) {
   }, []);
 
   return (
-    <div ref={containerRef}>
+    <span ref={containerRef}>
       {text.split(" ").map((word, idx) => (
         <span
-        key={idx}
-        className={`word ${visible ? "show" : ""}`}
-        style={{
+          key={idx}
+          className={`word ${visible ? "show" : ""}`}
+          style={{
             transitionDelay: `${idx * 0.04}s`,
             backgroundColor: orange ? "#feb86b" : "transparent",
-        }}
+          }}
         >
           {word}&nbsp;
         </span>
       ))}
-    </div>
+    </span>
   );
 }
