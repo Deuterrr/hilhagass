@@ -291,12 +291,12 @@ export default function Works() {
                                         </div>
 
                                         {/* Role */}
-                                        <div className="flex flex-col gap-4">
+                                        {/* <div className="flex flex-col gap-4">
                                             <h2 style={{fontFamily: "var(--font-alt)", fontSize: "var(--font-alt-size)"}}>ROLE & IMPACT</h2>
                                             <div className="leading-[var(--leading-small-text-size)] tracking-[-1px]" style={{fontFamily: "var(--font-text)", fontSize: "var(--font-small-text-size)"}}>
                                                 {project.role}
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
 
                                     {/* Role */}
