@@ -22,7 +22,7 @@ function AppRoutes() {
 export default function App() {
     return (
         <div style={{ backgroundColor: "var(--white)" }}>
-            <Router basename="/hilhagass">
+            <Router basename={import.meta.env.VITE_BASE_URL || '/'}>
                 <ScrollToTop />
                 <CustomCursor />
                 <AppRoutes />
