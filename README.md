@@ -1,67 +1,36 @@
-# hilhagass
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A simple React + Vite portfolio project, containerized with Docker. I built this not only for a college task, but also to strengthen my personal brand and deepen my experience in website development and engineering.
+## Getting Started
 
----
-
-## 🚀 How to run
-
-There are two ways to start the project:
-
----
-
-### ✅ Using the helper script (recommended)
-
-If you are on **Linux/macOS**, simply run:
+First, run the development server:
 
 ```bash
-./run.sh
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Or on **Windows**, double-click:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```
-run.bat
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This will automatically build the Docker image, start the container, and open your browser to [http://localhost:8080](http://localhost:8080).
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Stop it anytime with `Ctrl+C` in the terminal, or:
+## Learn More
 
-```bash
-docker-compose down
-```
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### ✅ Manually via Docker Compose
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Alternatively, you can run:
+## Deploy on Vercel
 
-```bash
-docker-compose up --build
-```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Then open [http://localhost:8080](http://localhost:8080) in your browser manually.
-
-Stop with:
-
-```bash
-docker-compose down
-```
-
----
-
-## 📂 Project structure
-
-- `src/` — React components and pages
-- `Dockerfile` — builds the app and serves via nginx
-- `docker-compose.yml` — orchestrates the build and run
-- `.dockerignore` — speeds up Docker build
-- `vite.config.js` — Vite build config
-- `package.json` — dependencies and build scripts
-- `run.sh` / `run.bat` — helper scripts to build and run
-
----
-
-🎉 **Thank You! - Author**
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
